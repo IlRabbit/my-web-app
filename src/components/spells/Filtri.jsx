@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { PaginationControl } from 'react-bootstrap-pagination-control';
 import {Form, Button, Row, Col} from 'react-bootstrap/'
 import Select from 'react-select';
+import { getSpells } from '../../services/service';
 
 
 const Filtri = ({query, setQuery}) => {
@@ -11,6 +12,34 @@ const Filtri = ({query, setQuery}) => {
   const [classe, setClasse] = useState(null);
   const [searchClicked, setSearchClicked] = useState(false);
   const [page, setPage] = useState(1);
+  const [totalItems, setTotalItems] = useState(0);
+ 
+//Pagination
+  const fetchSpells = async () => {
+    try {
+        await getSpells(query ?? '').then(res => {
+            setTotalItems(res.count);
+            console.log(totalItems)
+        })
+    } catch (e) {
+
+    }
+};
+
+useEffect(() => {
+  fetchSpells() 
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [query]);
+
+const totalPages = Math.ceil(totalItems / 50);
+
+useEffect(() => {
+  setQuery(
+    `?page=${page}${search.length > 0 ? '&search=' + search : ''}${level ? '&level_int=' + level : ''}${school ? '&school=' + school : ''}${classe ? '&spell_lists=' + classe : ''}`
+  );
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [page]) 
+//End Pagination
 
   useEffect(() => {
     if (searchClicked) 
@@ -28,12 +57,6 @@ const Filtri = ({query, setQuery}) => {
     );
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [level, school, classe])
-
-  useEffect(() => {
-    setQuery(
-      `?page=${page}`
-    )
-  }, [page]) 
 
   return (
     <>
@@ -59,14 +82,14 @@ const Filtri = ({query, setQuery}) => {
     <PaginationControl 
     page={page}
     between={4}
-    total={58}
-    limit={2}
+    total={totalPages}
+    limit={1}
     changePage={(page) => {
       setPage(page)
     }}
     ellipsis={1} />
     </div>
-    
+
     <Row className='mt-5'>
       <Col>
         <Select

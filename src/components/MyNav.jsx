@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const MyNav = () => {
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar className="mynav" bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="/">D&D Wiki</Navbar.Brand>
         <Nav className="me-auto">
