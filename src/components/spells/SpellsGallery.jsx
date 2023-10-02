@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Container, Row, Pagination} from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { getSpells } from '../../services/service';
 import SpellCard from './SpellCard';
 import Filtri from './Filtri';

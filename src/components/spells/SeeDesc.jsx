@@ -9,7 +9,7 @@ const SeeDesc = ({desc}) => (
     placement="bottom" 
     overlay={
         <Popover id="popover-basic">
-        <Popover.Header as="h3">Description</Popover.Header>
+        <Popover.Header as="h3"></Popover.Header>
         <Popover.Body>
             {desc}
         </Popover.Body>

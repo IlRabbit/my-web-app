@@ -6,7 +6,7 @@ const MyNav = () => {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">D&D Wiki</Navbar.Brand>
+        <Navbar.Brand href="/">D&D Wiki</Navbar.Brand>
         <Nav className="me-auto">
             <Link to="/" className='nav-link'>Home</Link>
             <Link to="/spells" className='nav-link'>Spells</Link>

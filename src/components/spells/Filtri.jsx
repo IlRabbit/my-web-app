@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { PaginationControl } from 'react-bootstrap-pagination-control';
-import {Form, Button, Pagination, Row, Col} from 'react-bootstrap/'
+import {Form, Button, Row, Col} from 'react-bootstrap/'
 import Select from 'react-select';
 
 
@@ -54,17 +54,19 @@ const Filtri = ({query, setQuery}) => {
       Search
     </Button>
   </Form>
+
   <div className='mt-5'>
     <PaginationControl 
     page={page}
     between={4}
-    total={250}
-    limit={20}
+    total={58}
+    limit={2}
     changePage={(page) => {
       setPage(page)
     }}
     ellipsis={1} />
     </div>
+    
     <Row className='mt-5'>
       <Col>
         <Select
