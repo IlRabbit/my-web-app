@@ -1,6 +1,6 @@
 import React from 'react';
 import MyNav from './components/MyNav.jsx'
-import SpellsGallery from './components/SpellsGallery.jsx';
+import SpellsGallery from './components/spells/SpellsGallery.jsx';
 import Home from './components/Home.jsx';
 import {
   BrowserRouter as Router,

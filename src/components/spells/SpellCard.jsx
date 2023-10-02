@@ -1,6 +1,6 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
-import SeeDesc from './SeeDesc'
+import SeeDesc from './SeeDesc';
 
 const SpellCard = ({name, school, level, dnd_class, desc}) => {
   return (
