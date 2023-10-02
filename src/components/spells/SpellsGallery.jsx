@@ -25,9 +25,9 @@ const SpellsGallery = () => {
     }, [query]);
 
     return (
-        <Container className="pt-5" >
+        <Container className="pt-5 d-flex">
             {spells.length > 0 && 
-            <Row className="flex-wrap" style={{alignItems: 'stretch'}} >
+            <Row className="flex-wrap" style={{alignItems: 'stretch'}}>
                 <h1 className='text-center text-primary'>Spells</h1>
                 <span className='m-2'>
                     <Filtri setQuery={setQuery} query={query}/>

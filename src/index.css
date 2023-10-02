@@ -21,8 +21,8 @@ code {
 
 .m-3 {
   box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 5px;
+  border: 2px solid #4600FF;
+  height: 12rem;
 }
 
 .filtri {

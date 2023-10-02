@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { PaginationControl } from 'react-bootstrap-pagination-control';
 import {Form, Button, Pagination, Row, Col} from 'react-bootstrap/'
 import Select from 'react-select';
 
@@ -9,6 +10,7 @@ const Filtri = ({query, setQuery}) => {
   const [school, setSchool] = useState(null);
   const [classe, setClasse] = useState(null);
   const [searchClicked, setSearchClicked] = useState(false);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     if (searchClicked) 
@@ -26,6 +28,12 @@ const Filtri = ({query, setQuery}) => {
     );
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [level, school, classe])
+
+  useEffect(() => {
+    setQuery(
+      `?page=${page}`
+    )
+  }, [page]) 
 
   return (
     <>
@@ -46,6 +54,17 @@ const Filtri = ({query, setQuery}) => {
       Search
     </Button>
   </Form>
+  <div className='mt-5'>
+    <PaginationControl 
+    page={page}
+    between={4}
+    total={250}
+    limit={20}
+    changePage={(page) => {
+      setPage(page)
+    }}
+    ellipsis={1} />
+    </div>
     <Row className='mt-5'>
       <Col>
         <Select
