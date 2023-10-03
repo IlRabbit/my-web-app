@@ -9,11 +9,11 @@ const MyNav = () => {
         <Navbar.Brand href="/">D&D Wiki</Navbar.Brand>
         <Nav className="me-auto">
             <Link to="/" className='nav-link'>Home</Link>
-            <Link to="/spells" className='nav-link'>Spells</Link>
-            <Link to="/" className='nav-link'>Monsters</Link>
-            <Link to="/" className='nav-link'>Feats</Link>
-            <Link to="/" className='nav-link'>Items</Link>
-            <Link to="/" className='nav-link'>Planes</Link>
+            <Link to="/spells/" className='nav-link'>Spells</Link>
+            <Link to="/monsters/" className='nav-link'>Monsters</Link>
+            <Link to="/feats/" className='nav-link'>Feats</Link>
+            <Link to="/items/" className='nav-link'>Items</Link>
+            <Link to="/planes/" className='nav-link'>Planes</Link>
         </Nav>
       </Container>
     </Navbar>

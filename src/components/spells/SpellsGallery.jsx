@@ -27,7 +27,7 @@ const SpellsGallery = () => {
         <Container className="pt-5 d-flex">
             {spells.length > 0 && 
             <Row className="flex-wrap" style={{alignItems: 'stretch'}}>
-                <h1 className='text-center text-primary mt-3'>SPELLS GALLERY</h1>
+                <h1 className='text-center text-primary mt-3'>SPELLS LIST</h1>
                 <span className='m-2'>
                     <Filtri setQuery={setQuery} query={query}/>
                 </span>
