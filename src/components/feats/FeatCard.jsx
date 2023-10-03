@@ -3,8 +3,9 @@ import { Card } from 'react-bootstrap'
 import FeatDesc from './FeatDesc'
 
 const FeatCard = ({name, prerequisite, effects_desc}) => {
+
   return (
-    <Card className='m-2' bg="dark" text='white'>
+    <Card className='m-4' bg="dark" text='white'>
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Subtitle className="mb-2"></Card.Subtitle>

@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import  FeatCard  from './FeatCard.jsx'
 import { getFeats } from '../../services/service';
+import FeatFilters from './FeatFilters.jsx';
 
 
 const FeatsGallery = () => {
     const [feats, setFeats] = useState([]);
-    const [query , setQuery] = useState(null);
+    const [query, setQuery] = useState(null);
     
 
     const fetchFeats = async () => {
@@ -27,8 +28,12 @@ const FeatsGallery = () => {
   return (
     <>
     <Container className="pt-5 d-flex">
+    {feats.length > 0 && 
         <Row className="flex-wrap">
             <h1 className='text-primary mt-5 text-center'>FEATS LIST</h1>
+            <div>
+                <FeatFilters setQuery={setQuery} query={query}/>
+            </div>
             {feats.map((feat) => (
                 <Col key={feat.slug} xs={12} md={6} lg={4}>
                     <FeatCard
@@ -38,7 +43,7 @@ const FeatsGallery = () => {
                     />
                 </Col>
             ))}
-        </Row>
+        </Row>}
 
     </Container>
     </>
